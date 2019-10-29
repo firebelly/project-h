@@ -4,7 +4,7 @@ import os
 env.hosts = ['projecthdesign.org']
 env.user = 'projecth'
 env.path = '~/Sites/project-h'
-env.remotepath = '/home/projecth/webapps/project-h'
+env.remotepath = '/home/projecth/webapps/projecth_redirecdtion'
 env.git_branch = 'master'
 env.warn_only = True
 env.remote_protocol = 'http'
