@@ -1,0 +1,55 @@
+//base styles
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  text-align: center;
+  color: color(black);
+  padding: 20px 0 100px;
+	background: color(gray);
+  font-family: 'Rational-Book', sans-serif;
+
+  @include media-md {
+    padding-top: 100px;
+  }
+}
+
+#logo {
+  width: 205px;
+}
+
+.strong {
+  font-family: 'Rational-SemiBold';
+}
+
+a {
+	color: inherit;
+  font-family: 'Rational-SemiBold';
+}
+
+img {
+  height: auto;
+	max-width: 100%;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.sitewrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
+  position: relative;
+  @include clearfix();
+  padding: 0 $padding-sm;
+  @include media-md {
+    padding: 0 $padding-md;
+  }
+}

@@ -1,0 +1,48 @@
+// Typography
+
+// @font-face
+@import url("//hello.myfonts.net/count/31b88b");
+
+@font-face {font-family: 'Rational-Book';src: url('../fonts/3163D0_1_0.eot');src: url('../fonts/3163D0_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/3163D0_1_0.woff2') format('woff2'),url('../fonts/3163D0_1_0.woff') format('woff'),url('../fonts/3163D0_1_0.ttf') format('truetype'),url('../fonts/3163D0_1_0.svg#wf') format('svg');}
+
+@font-face {font-family: 'Rational-SemiBold';src: url('../fonts/3163D0_3_0.eot');src: url('../fonts/3163D0_3_0.eot?#iefix') format('embedded-opentype'),url('../fonts/3163D0_3_0.woff2') format('woff2'),url('../fonts/3163D0_3_0.woff') format('woff'),url('../fonts/3163D0_3_0.ttf') format('truetype'),url('../fonts/3163D0_3_0.svg#wf') format('svg');}
+
+// Font-family mixins
+/// example:
+/// @mixin font-display {
+///   font-style: normal;
+///   font-weight: normal;
+///   font-family: 'Custom Font Family';
+/// }
+
+/// Mixin to allow us to concisely define all aspects of a paragraph style (except for family.)
+/// @param {number} $size - Font size specified in pixels (without 'px')
+/// @param {number} $lh - Line height specified in pixels (without 'px')
+/// @param {number} $ls [0em] - Letter spacing
+/// @param {number or string} $w [normal] - Font weight
+/// @param {string} $tt [none] - Text transform
+/// @example scss - Used as a shortcut in defining a paragraph style...
+///   @mixin h1 {
+///     @include font-display; // The font face
+///     @include paragraph-style (12, 16, $ls: .075em, $tt: uppercase); // Other properties
+///   }
+@mixin paragraph-style ($size, $lh, $ls: 0em, $w: normal, $tt: none) {
+  font-size: #{$size}px;
+  line-height: ($lh / $size);
+  letter-spacing: $ls;
+  text-transform: $tt;
+  font-weight: $w;
+}
+
+// Type Style Mixins + Classes
+/// example:
+/// @mixin h1 {
+///   @include font-display;
+///   @include paragraph-style(31, 40, -.010322581em);
+///   @include media-md {
+///     @include paragraph-style(96, 96, -.005208333em);
+///   }
+/// }
+/// .h1 {
+///   @include h1;
+/// }
